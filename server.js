@@ -50,7 +50,7 @@ app.get("/device", (req, res) => {
     var dev = req.query.id;
     fs.readFile(__dirname + "/hosts/host.json", "utf-8", (err, data) =>{
         devices = JSON.parse(data);
-        res.render('device', {title: devices[dev]["name"], active: { devicehub: true}})
+        res.render('device', {layout: "device_index", title: devices[dev]["name"], active: { devicehub: true}, device: devices[dev]})
     })
 })
 
