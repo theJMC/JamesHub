@@ -2,10 +2,10 @@
   "name": "jameshub",
   "version": "1.0.0",
   "description": "This is the code for my Lab's main page, with links to the other sites within my lab",
-  "main": "server.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node main.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "express": "^4.17.1",
-    "express-handlebars": "^5.1.0"
+    "express-handlebars": "^5.1.0",
+    "vhost": "^3.0.2"
   }
 }

@@ -2,10 +2,9 @@
 const express = require("express");
 const hbs = require('express-handlebars');
 const fs = require('fs');
-const axios = require('axios')
 
-// Settings
-const port = 2000;
+// Settings 
+const port = 80;
 
 // Init Express App
 const app = express();
@@ -13,7 +12,7 @@ const app = express();
 // Setup handlebars and its settings
 app.set("view engine", "hbs"); 
 app.engine('hbs', hbs({
-    layoutsDir: __dirname + "/views/layouts",
+    layoutsDir: __dirname + "/../views/layouts",
     extname: 'hbs',
     defaultLayout: 'index'
 }));
@@ -38,7 +37,7 @@ app.get("/smarthome", (req, res) => {
 // |-- DEVICES --|
 // Main Hub
 app.get("/", (req, res) => {
-    fs.readFile(__dirname + "/hosts/host.json", "utf-8", (err, data) =>{
+    fs.readFile(__dirname + "/../hosts/host.json", "utf-8", (err, data) =>{
         devices = JSON.parse(data);
         res.render('devicehub', {title: "Device Hub", active: { devicehub: true}, device: devices})
     })
@@ -48,11 +47,13 @@ app.get("/", (req, res) => {
 // Device Details
 app.get("/device", (req, res) => {
     var dev = req.query.id;
-    fs.readFile(__dirname + "/hosts/host.json", "utf-8", (err, data) =>{
+    fs.readFile(__dirname + "/../hosts/host.json", "utf-8", (err, data) =>{
         devices = JSON.parse(data);
         res.render('device', {layout: "device_index", title: devices[dev]["name"], active: { devicehub: true}, device: devices[dev]})
     })
 })
 
 // -- START THE SERVER -- 
-app.listen(port, () => console.log(`App is listening on ${port}`));
+//app.listen(port, () => console.log(`App is listening on ${port}`));
+
+exports.app = app
