@@ -5,7 +5,7 @@ const express = require("express");
 const app = express();
 
 app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/redirectHTML/pihole.html");
+    res.redirect("http://pi.hole.lab:8080/admin")
 });
 
 exports.app = app;
