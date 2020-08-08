@@ -10,6 +10,7 @@ app.use(vhost('hub.lab', require("./device-src/device-server").app));
 app.use(vhost('pi.hole.lab', require("./redirects/redirect-pihole").app));
 app.use(vhost('portainer.lab', require("./redirects/redirect-portainer").app));
 app.use(vhost('ctrl.lab', require("./redirects/redirect-ctrl").app));
+app.use(vhost('git.lab', require("./redirects/redirect-github").app));
 
 app.get("/", (req, res) => {
     res.status(301).send("Try accessing from a different URL")
