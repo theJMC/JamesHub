@@ -5,7 +5,7 @@ const express = require("express");
 const app = express();
 
 app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/redirectHTML/portainer.html");
+    res.redirect("http://portainer.lab:9000");
 });
 
 exports.app = app;

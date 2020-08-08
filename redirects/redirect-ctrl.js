@@ -5,7 +5,7 @@ const express = require("express");
 const app = express();
 
 app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/redirectHTML/webCTRL.html");
+    res.redirect("http://ctrl.lab:8000");
 });
 
 exports.app = app;
