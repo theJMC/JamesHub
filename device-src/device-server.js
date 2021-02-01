@@ -55,6 +55,6 @@ app.get("/device", (req, res) => {
 })
 
 // -- START THE SERVER -- 
-//app.listen(port, () => console.log(`App is listening on ${port}`));
+app.listen(port, () => console.log(`App is listening on ${port}`));
 
-exports.app = app
+//exports.app = app
