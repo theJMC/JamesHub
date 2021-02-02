@@ -2,7 +2,7 @@
   "name": "jameshub",
   "version": "1.0.0",
   "description": "This is the code for my Lab's main page, with links to the other sites within my lab",
-  "main": "main.js",
+  "main": "./device-src/device-server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./device-src/device-server.js"
